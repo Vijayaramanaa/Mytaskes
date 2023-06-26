@@ -1,0 +1,16 @@
+apiVersion : apps/v1
+kind:Deployment
+metadata:
+         name:petshop
+spec:
+    replicas:5
+    selector:
+             matchlables:
+             labels:
+             app: petshop
+    spec:
+    containers:
+      -name:petshop
+      image:us.icr.io/petsavenue/pawpaws
+      imagepullpolicy:always
+      ports:-containerPort :5000
